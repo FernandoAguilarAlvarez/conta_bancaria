@@ -1,12 +1,19 @@
 import readlinesync = require("readline-sync");
 import { colors } from './src/util/colors';
+import { Conta } from "./src/model/Conta";
 
 export function main() {
 
     let opcao: number;
 
-    while (true) {
+    const conta: Conta = new Conta(1, 123, 1, "Fernando", 15000);
+    conta.visualizar();
+    conta.sacar(10500);
+    conta.visualizar();
+    conta.depositar(370);
+    conta.visualizar();
 
+    while (true) {
         console.log(colors.bg.black, colors.fg.yellowstrong, "\n#####################################################");
         console.log("#                                                   #");
         console.log("#                BANCO DO BRAZIL COM Z              #");
@@ -96,11 +103,12 @@ export function main() {
 }
 
 export function sobre(): void {
-    console.log(colors.bg.black, colors.fg.red, "\n#####################################################");
-    console.log("Projeto Desenvolvido por: Fernando Alvarez");
-    console.log("Generation Brasil - generation@generation.org");
-    console.log("github.com/FernandoAguilarAlvarez");
-    console.log("#######################################################");
+    console.log(colors.bg.black, colors.fg.redstrong, "\n┌────────────────────────────────────────────────┐");
+    console.log("│ Projeto Desenvolvido por: Fernando Alvarez     │");
+    console.log("│ Instituição: Generation Brasil                 │");
+    console.log("│ Contato: generation@generation.org             │");
+    console.log("│ GitHub: github.com/FernandoAguilarAlvarez      │");
+    console.log("└────────────────────────────────────────────────┘");
 }
 
 function keyPress(): void {
