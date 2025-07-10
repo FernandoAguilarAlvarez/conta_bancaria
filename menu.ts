@@ -1,6 +1,8 @@
 import readlinesync = require("readline-sync");
 import { colors } from './src/util/colors';
 import { Conta } from "./src/model/Conta";
+import { ContaCorrente } from "./src/model/ContaCorrente";
+import { ContaPoupanca } from "./src/model/ContaPoupanca";
 
 export function main() {
 
@@ -12,6 +14,20 @@ export function main() {
     conta.visualizar();
     conta.depositar(370);
     conta.visualizar();
+
+    const contacorrente: ContaCorrente = new ContaCorrente(2, 123, 1, "Mariana", 15000, 1000);
+    contacorrente.visualizar();
+    contacorrente.sacar(2000);
+    contacorrente.visualizar();
+    contacorrente.depositar(1000);
+    contacorrente.visualizar();
+
+    const contapoupanca: ContaPoupanca = new ContaPoupanca(3, 123, 2, "Victor", 1000, 10);
+    contapoupanca.visualizar();
+    contapoupanca.sacar(200);
+    contapoupanca.visualizar();
+    contapoupanca.depositar(1000);
+    contapoupanca.visualizar();
 
     while (true) {
         console.log(colors.bg.black, colors.fg.yellowstrong, "\n#####################################################");
@@ -39,6 +55,7 @@ export function main() {
         if (opcao == 9) {
             console.log(colors.fg.white, "\nBanco do Brazil com Z - O seu Futuro começa aqui!", colors.reset);
             sobre();
+            console.log(colors.reset, "");
             process.exit(0);
         }
 
