@@ -1,6 +1,6 @@
-import { Conta } from "../src/model/Conta";
-import { ContaRepository } from "../src/repository/ContaRepository";
-import { colors } from "../src/util/colors";
+import { Conta } from "../model/Conta";
+import { ContaRepository } from "../repository/ContaRepository";
+import { colors } from "../util/colors";
 
 export class ContaController implements ContaRepository {
     private listaContas: Array<Conta> = new Array<Conta>();
